@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/style.css?v=4" />
 </head>
 <body>
   <div id="gate" class="gate">
@@ -28,15 +28,7 @@
   </div>
 
   <div id="app" class="app" hidden>
-    <div class="florals-bg" aria-hidden="true">
-      <span class="floral floral-rose f1">🌹</span>
-      <span class="floral floral-rose f2">🌹</span>
-      <span class="floral floral-rose f3">🌹</span>
-      <span class="floral floral-sunflower f4">🌻</span>
-      <span class="floral floral-sunflower f5">🌻</span>
-      <span class="floral floral-sunflower f6">🌻</span>
-      <span class="floral floral-sunflower f7">🌻</span>
-    </div>
+    <div class="florals-bg" aria-hidden="true"></div>
     <button id="lock-top-btn" class="lock-btn lock-btn-top" type="button" aria-label="Κλείδωμα ξανά">🔒 Κλείδωμα ξανά</button>
 
     <header class="hero">
@@ -74,16 +66,14 @@
     </section>
 
     <section class="planner-section">
-      <div class="planner-header">
-        <div class="planner-header-text">
-          <h2>Σχεδιασμός Επετείου</h2>
-          <p class="planner-intro">Μια σημαντική ψηφοφορία. Προσεκτικά.</p>
-        </div>
-        <img src="assets/flork-shy.png" alt="" class="planner-meme" width="120" height="120" />
-      </div>
+      <h2>Σχεδιασμός Επετείου</h2>
+      <p class="planner-intro">Μια σημαντική ψηφοφορία. Προσεκτικά.</p>
       <form id="planner-form" class="planner-form" novalidate>
         <div class="planner-question">
-          <p class="planner-q">Δείπνο για την επέτειο;</p>
+          <div class="planner-q-row">
+            <p class="planner-q">Δείπνο για την επέτειο;</p>
+            <img src="assets/flork-shy.png" alt="" class="planner-meme" width="80" height="80" />
+          </div>
           <div class="planner-options" data-field="dinner">
             <button type="button" class="planner-btn" data-value="Ναι">Ναι</button>
             <button type="button" class="planner-btn" data-value="Ναι">Ναι</button>
@@ -119,11 +109,12 @@
     </footer>
   </div>
 
-  <script src="content.js"></script>
-  <script src="secrets.js"></script>
-  <script src="js/config.js"></script>
-  <script src="js/auth.js"></script>
-  <script src="js/app.js"></script>
-  <script src="js/planner.js"></script>
+  <script src="content.js?v=4"></script>
+  <script src="secrets.js?v=4"></script>
+  <script src="js/config.js?v=4"></script>
+  <script src="js/auth.js?v=4"></script>
+  <script src="js/app.js?v=4"></script>
+  <script src="js/floral-rain.js?v=4"></script>
+  <script src="js/planner.js?v=4"></script>
 </body>
 </html>

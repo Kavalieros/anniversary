@@ -8,8 +8,14 @@ gh auth status
 
 git branch -M main
 
-# Create repo if it doesn't exist yet
-$repoExists = gh repo view Kavalieros/anniversary 2>$null
+$repoExists = $false
+try {
+  gh repo view Kavalieros/anniversary 2>$null | Out-Null
+  if ($LASTEXITCODE -eq 0) { $repoExists = $true }
+} catch {
+  $repoExists = $false
+}
+
 if (-not $repoExists) {
   gh repo create anniversary --public --source=. --remote=origin --push
 } else {
@@ -20,8 +26,6 @@ if (-not $repoExists) {
 
 gh secret set EMAIL_1 --body "kavalieros.v@gmail.com"
 gh secret set EMAIL_2 --body "fylliwft@hotmail.gr"
-
-Write-Host "Passphrases (ηλιοτρόπιο/ηλίανθος + plurals) are configured in the deploy workflow."
 
 Write-Host ""
 Write-Host "Done! Enable GitHub Pages:"

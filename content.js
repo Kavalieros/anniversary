@@ -18,4 +18,6 @@ window.ANNIVERSARY_CONTENT = {
 Εσύ είσαι το φως μου.
 Εσύ είσαι το ηλιοτρόπιό μου.
 Σ' αγαπώ.`,
+
+  plannerNotifyEmail: "kavalieros.v@gmail.com",
 };

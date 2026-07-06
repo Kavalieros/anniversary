@@ -16,11 +16,11 @@
       <div class="gate-icon">♥</div>
       <h1>Μόνο για εμάς</h1>
       <p class="gate-sub">Βάλε το email σου και τον κωδικό για να ξεκλειδώσεις τη σελίδα.</p>
-      <form id="gate-form" autocomplete="off">
+      <form id="gate-form" autocomplete="off" novalidate>
         <label for="gate-email">Το email σου</label>
-        <input type="email" id="gate-email" placeholder="you@email.com" required />
+        <input type="email" id="gate-email" inputmode="email" autocapitalize="off" placeholder="email@example.com" required />
         <label for="gate-pass">Κωδικός</label>
-        <input type="password" id="gate-pass" required />
+        <input type="text" id="gate-pass" autocapitalize="off" autocomplete="off" required />
         <p id="gate-error" class="gate-error" hidden></p>
         <button type="submit">Ξεκλείδωμα</button>
       </form>

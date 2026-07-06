@@ -2,24 +2,28 @@
   const STORAGE_KEY = "anniversary_auth";
   const cfg = window.ANNIVERSARY_CONFIG;
 
-  if (!cfg) {
-    document.getElementById("gate-error").hidden = false;
-    document.getElementById("gate-error").textContent =
-      "Λείπει η ρύθμιση — δημιούργησε secrets.js από το secrets.example.js.";
-    return;
-  }
-
   const gate = document.getElementById("gate");
   const app = document.getElementById("app");
   const form = document.getElementById("gate-form");
   const errorEl = document.getElementById("gate-error");
   const logoutBtn = document.getElementById("logout-btn");
 
+  function showError(message) {
+    errorEl.textContent = message;
+    errorEl.hidden = false;
+  }
+
+  if (!cfg || !cfg.allowedEmails || cfg.allowedEmails.length === 0) {
+    showError("Λείπει η ρύθμιση — δοκίμασε ξανά σε λίγο.");
+    return;
+  }
+
   function normalizeGreek(str) {
     return str
       .trim()
       .normalize("NFD")
-      .replace(/\p{M}/gu, "")
+      .replace(/[\u0300-\u036f]/g, "")
+      .replace(/ς/g, "σ")
       .toLowerCase();
   }
 
@@ -71,25 +75,35 @@
     e.preventDefault();
     errorEl.hidden = true;
 
-    const email = document.getElementById("gate-email").value;
+    const email = document.getElementById("gate-email").value.trim();
     const pass = document.getElementById("gate-pass").value;
 
+    if (!email) {
+      showError("Βάλε το email σου.");
+      return;
+    }
+
+    if (!pass) {
+      showError("Βάλε τον κωδικό.");
+      return;
+    }
+
     if (!isAllowedEmail(email)) {
-      errorEl.textContent = "Αυτό το email δεν είναι στη λίστα.";
-      errorEl.hidden = false;
+      showError("Αυτό το email δεν είναι στη λίστα.");
       return;
     }
 
     if (!isCorrectPassphrase(pass)) {
-      errorEl.textContent = "Λάθος κωδικός — δοκίμασε ξανά.";
-      errorEl.hidden = false;
+      showError("Λάθος κωδικός — δοκίμασε ξανά.");
       return;
     }
 
     unlock(email);
   });
 
-  logoutBtn.addEventListener("click", lock);
+  if (logoutBtn) {
+    logoutBtn.addEventListener("click", lock);
+  }
 
   tryRestoreSession();
 })();

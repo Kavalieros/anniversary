@@ -29,11 +29,12 @@
 
   <div id="app" class="app" hidden>
     <div class="hearts-bg" aria-hidden="true"></div>
+    <button id="lock-top-btn" class="lock-btn lock-btn-top" type="button" aria-label="Κλείδωμα ξανά">🔒 Κλείδωμα ξανά</button>
 
     <header class="hero">
       <p class="hero-eyebrow">Γιορτάζουμε</p>
       <h1 class="hero-title"><span id="years-count">2</span> Χρόνια</h1>
-      <p class="hero-names"><span id="your-name">Εγώ</span> &amp; <span id="her-name">Φυλλιώ</span></p>
+      <p class="hero-names"><span id="your-name">Βαγγέλης</span> &amp; <span id="her-name">Φυλλιώ</span></p>
       <p class="hero-since">Μαζί από <span id="start-date-display"></span></p>
     </header>
 
@@ -55,16 +56,11 @@
     </section>
 
     <section class="letter-section">
-      <h2>Μία Επιστολή Για Σένα</h2>
+      <h2>Για Σένα</h2>
       <div class="letter-paper">
         <p id="love-letter" class="love-letter"></p>
         <p class="letter-sign">— <span id="letter-sign-name"></span></p>
       </div>
-    </section>
-
-    <section class="timeline-section">
-      <h2>Η Ιστορία Μας</h2>
-      <div id="timeline" class="timeline"></div>
     </section>
 
     <section class="planner-section">
@@ -104,7 +100,7 @@
 
     <footer class="footer">
       <p>Φτιαγμένο με αγάπη · <span id="footer-year"></span></p>
-      <button id="logout-btn" class="logout-btn" type="button">Κλείδωμα σελίδας</button>
+      <button id="logout-btn" class="lock-btn logout-btn" type="button">Κλείδωμα ξανά</button>
     </footer>
   </div>
 

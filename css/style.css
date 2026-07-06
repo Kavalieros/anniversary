@@ -527,6 +527,32 @@ body {
   transform: scale(1.03);
 }
 
+/* ── Lock button ── */
+
+.lock-btn-top {
+  position: sticky;
+  top: 0.75rem;
+  z-index: 10;
+  display: block;
+  margin: 0 0 1rem auto;
+  padding: 0.45rem 0.9rem;
+  border: 1px solid var(--rose-light);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--ink-soft);
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.lock-btn-top:hover,
+.logout-btn:hover {
+  border-color: var(--rose);
+  color: var(--rose-deep);
+}
+
 /* ── Footer ── */
 
 .footer {
@@ -548,11 +574,6 @@ body {
   font-size: 0.8rem;
   cursor: pointer;
   transition: border-color 0.2s, color 0.2s;
-}
-
-.logout-btn:hover {
-  border-color: var(--rose);
-  color: var(--rose-deep);
 }
 
 /* ── Responsive ── */

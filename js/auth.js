@@ -6,7 +6,6 @@
   const app = document.getElementById("app");
   const form = document.getElementById("gate-form");
   const errorEl = document.getElementById("gate-error");
-  const logoutBtn = document.getElementById("logout-btn");
 
   function showError(message) {
     errorEl.textContent = message;
@@ -120,9 +119,9 @@
     unlock(email);
   });
 
-  if (logoutBtn) {
-    logoutBtn.addEventListener("click", lock);
-  }
+  document.querySelectorAll(".lock-btn").forEach((btn) => {
+    btn.addEventListener("click", lock);
+  });
 
   tryRestoreSession();
 })();

@@ -34,22 +34,6 @@
     document.getElementById("heartbeats").textContent = heartbeats.toLocaleString("el-GR");
   }
 
-  function renderTimeline() {
-    const container = document.getElementById("timeline");
-    container.innerHTML = "";
-
-    (cfg.timeline || []).forEach((entry) => {
-      const el = document.createElement("div");
-      el.className = "timeline-entry";
-      el.innerHTML = `
-        <p class="timeline-date">${entry.date}</p>
-        <p class="timeline-title">${entry.title}</p>
-        <p class="timeline-text">${entry.text}</p>
-      `;
-      container.appendChild(el);
-    });
-  }
-
   function renderGallery() {
     const photos = cfg.photos || [];
     if (photos.length === 0) return;
@@ -76,7 +60,6 @@
     document.getElementById("letter-sign-name").textContent = cfg.yourName;
     document.getElementById("footer-year").textContent = new Date().getFullYear();
 
-    renderTimeline();
     renderGallery();
     updateCounters();
     setInterval(updateCounters, 60_000);

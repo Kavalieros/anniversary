@@ -57,7 +57,7 @@
     document.getElementById("years-count").textContent = yearsTogether(cfg.startDate);
     document.getElementById("start-date-display").textContent = formatDate(cfg.startDate);
     document.getElementById("love-letter").textContent = cfg.loveLetter;
-    document.getElementById("letter-sign-name").textContent = cfg.yourName;
+    document.getElementById("letter-sign-name").textContent = cfg.letterSign || cfg.yourName;
     document.getElementById("footer-year").textContent = new Date().getFullYear();
 
     renderGallery();

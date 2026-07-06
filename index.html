@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Two Years of Us</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- Access gate -->
+  <div id="gate" class="gate">
+    <div class="gate-card">
+      <div class="gate-icon">♥</div>
+      <h1>For Our Eyes Only</h1>
+      <p class="gate-sub">Enter your email and our secret to unlock this page.</p>
+      <form id="gate-form" autocomplete="off">
+        <label for="gate-email">Your email</label>
+        <input type="email" id="gate-email" placeholder="you@email.com" required />
+        <label for="gate-pass">Our secret</label>
+        <input type="password" id="gate-pass" placeholder="Something only we know" required />
+        <p id="gate-error" class="gate-error" hidden></p>
+        <button type="submit">Unlock</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Main content (hidden until authenticated) -->
+  <div id="app" class="app" hidden>
+    <div class="hearts-bg" aria-hidden="true"></div>
+
+    <header class="hero">
+      <p class="hero-eyebrow">Celebrating</p>
+      <h1 class="hero-title"><span id="years-count">2</span> Years</h1>
+      <p class="hero-names"><span id="your-name">You</span> &amp; <span id="her-name">Her</span></p>
+      <p class="hero-since">Together since <span id="start-date-display"></span></p>
+    </header>
+
+    <section class="counter-section">
+      <div class="counter-grid">
+        <div class="counter-item">
+          <span class="counter-value" id="days-together">—</span>
+          <span class="counter-label">days together</span>
+        </div>
+        <div class="counter-item">
+          <span class="counter-value" id="hours-together">—</span>
+          <span class="counter-label">hours of love</span>
+        </div>
+        <div class="counter-item">
+          <span class="counter-value" id="heartbeats">—</span>
+          <span class="counter-label">heartbeats (approx.)</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="letter-section">
+      <h2>A Letter For You</h2>
+      <div class="letter-paper">
+        <p id="love-letter" class="love-letter"></p>
+        <p class="letter-sign">— <span id="letter-sign-name"></span></p>
+      </div>
+    </section>
+
+    <section class="timeline-section">
+      <h2>Our Story</h2>
+      <div id="timeline" class="timeline"></div>
+    </section>
+
+    <section class="gallery-section" id="gallery-section" hidden>
+      <h2>Memories</h2>
+      <div id="gallery" class="gallery"></div>
+    </section>
+
+    <footer class="footer">
+      <p>Made with love · <span id="footer-year"></span></p>
+      <button id="logout-btn" class="logout-btn" type="button">Lock page</button>
+    </footer>
+  </div>
+
+  <script src="content.js"></script>
+  <script src="secrets.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

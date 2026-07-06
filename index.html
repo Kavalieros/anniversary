@@ -28,13 +28,24 @@
   </div>
 
   <div id="app" class="app" hidden>
-    <div class="hearts-bg" aria-hidden="true"></div>
+    <div class="florals-bg" aria-hidden="true">
+      <span class="floral floral-rose f1">🌹</span>
+      <span class="floral floral-rose f2">🌹</span>
+      <span class="floral floral-rose f3">🌹</span>
+      <span class="floral floral-sunflower f4">🌻</span>
+      <span class="floral floral-sunflower f5">🌻</span>
+      <span class="floral floral-sunflower f6">🌻</span>
+      <span class="floral floral-sunflower f7">🌻</span>
+    </div>
     <button id="lock-top-btn" class="lock-btn lock-btn-top" type="button" aria-label="Κλείδωμα ξανά">🔒 Κλείδωμα ξανά</button>
 
     <header class="hero">
       <p class="hero-eyebrow">Γιορτάζουμε</p>
       <h1 class="hero-title"><span id="years-count">2</span> Χρόνια</h1>
-      <p class="hero-names"><span id="your-name">Βαγγέλης</span> &amp; <span id="her-name">Φυλλιώ</span></p>
+      <p class="hero-names">
+        <span id="your-name">Βαγγέλης</span> &amp;
+        <span class="her-name-wrap"><span class="name-flower name-flower-rose" aria-hidden="true">🌹</span><span id="her-name">Φυλλιώ</span></span>
+      </p>
       <p class="hero-since">Μαζί από <span id="start-date-display"></span></p>
     </header>
 
@@ -50,14 +61,16 @@
         </div>
         <div class="counter-item">
           <span class="counter-value" id="heartbeats">—</span>
-          <span class="counter-label">χτυποκαρδιές (περίπου)</span>
+          <span class="counter-label">χτυποκαρδιά (περίπου)</span>
         </div>
       </div>
     </section>
 
     <section class="letter-section">
-      <h2>Για Σένα</h2>
-      <div class="letter-paper">
+      <h2><span class="section-flower" aria-hidden="true">🌻</span> Για Σένα</h2>
+      <div class="letter-paper letter-with-flowers">
+        <span class="letter-corner letter-corner-rose" aria-hidden="true">🌹</span>
+        <span class="letter-corner letter-corner-sunflower" aria-hidden="true">🌻</span>
         <p id="love-letter" class="love-letter"></p>
         <p class="letter-sign">— <span id="letter-sign-name"></span></p>
       </div>

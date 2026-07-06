@@ -20,7 +20,8 @@ if (-not $repoExists) {
 
 gh secret set EMAIL_1 --body "kavalieros.v@gmail.com"
 gh secret set EMAIL_2 --body "fylliwft@hotmail.gr"
-gh secret set PASSPHRASE --body "ερμης"
+
+Write-Host "Passphrases (ηλιοτρόπιο/ηλίανθος + plurals) are configured in the deploy workflow."
 
 Write-Host ""
 Write-Host "Done! Enable GitHub Pages:"

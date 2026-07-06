@@ -30,7 +30,6 @@ jobs:
         env:
           EMAIL_1: ${{ secrets.EMAIL_1 }}
           EMAIL_2: ${{ secrets.EMAIL_2 }}
-          PASSPHRASE: ${{ secrets.PASSPHRASE }}
         run: |
           node -e "
             const fs = require('fs');
@@ -39,7 +38,12 @@ jobs:
                 \${JSON.stringify(process.env.EMAIL_1)},
                 \${JSON.stringify(process.env.EMAIL_2)},
               ],
-              passphrase: \${JSON.stringify(process.env.PASSPHRASE)},
+              passphrases: [
+                'ηλιοτρόπιο',
+                'ηλιοτρόπια',
+                'ηλίανθος',
+                'ηλίανθοι',
+              ],
             };\`;
             fs.writeFileSync('secrets.js', body);
           "

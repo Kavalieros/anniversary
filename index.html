@@ -15,13 +15,12 @@
     <div class="gate-card">
       <div class="gate-icon">♥</div>
       <h1>Μόνο για εμάς</h1>
-      <p class="gate-sub">Βάλε το email σου και το μυστικό μας για να ξεκλειδώσεις τη σελίδα.</p>
+      <p class="gate-sub">Βάλε το email σου και τον κωδικό για να ξεκλειδώσεις τη σελίδα.</p>
       <form id="gate-form" autocomplete="off">
         <label for="gate-email">Το email σου</label>
         <input type="email" id="gate-email" placeholder="you@email.com" required />
-        <label for="gate-pass">Το μυστικό μας</label>
-        <input type="password" id="gate-pass" placeholder="Κάτι που μόνο εμείς ξέρουμε" required />
-        <p id="gate-hint" class="gate-hint"></p>
+        <label for="gate-pass">Κωδικός</label>
+        <input type="password" id="gate-pass" required />
         <p id="gate-error" class="gate-error" hidden></p>
         <button type="submit">Ξεκλείδωμα</button>
       </form>

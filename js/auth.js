@@ -13,12 +13,7 @@
   const app = document.getElementById("app");
   const form = document.getElementById("gate-form");
   const errorEl = document.getElementById("gate-error");
-  const hintEl = document.getElementById("gate-hint");
   const logoutBtn = document.getElementById("logout-btn");
-
-  if (cfg.passphraseHint) {
-    hintEl.textContent = "Υπόδειξη: " + cfg.passphraseHint;
-  }
 
   function normalizeGreek(str) {
     return str
@@ -28,13 +23,24 @@
       .toLowerCase();
   }
 
+  function getAcceptedPassphrases() {
+    if (cfg.passphrases && cfg.passphrases.length > 0) {
+      return cfg.passphrases.map(normalizeGreek);
+    }
+    if (cfg.passphrase) {
+      return [normalizeGreek(cfg.passphrase)];
+    }
+    return [];
+  }
+
   function isAllowedEmail(email) {
     const normalized = email.trim().toLowerCase();
     return cfg.allowedEmails.some((e) => e.trim().toLowerCase() === normalized);
   }
 
   function isCorrectPassphrase(input) {
-    return normalizeGreek(input) === normalizeGreek(cfg.passphrase);
+    const normalized = normalizeGreek(input);
+    return getAcceptedPassphrases().includes(normalized);
   }
 
   function unlock(email) {
@@ -75,7 +81,7 @@
     }
 
     if (!isCorrectPassphrase(pass)) {
-      errorEl.textContent = "Λάθος μυστικό — δοκίμασε ξανά.";
+      errorEl.textContent = "Λάθος κωδικός — δοκίμασε ξανά.";
       errorEl.hidden = false;
       return;
     }

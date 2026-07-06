@@ -6,6 +6,7 @@
   window.ANNIVERSARY_CONFIG = {
     ...content,
     allowedEmails: secrets.allowedEmails || [],
+    passphrases: secrets.passphrases || [],
     passphrase: secrets.passphrase || "",
   };
 })();

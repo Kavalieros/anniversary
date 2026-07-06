@@ -2,7 +2,6 @@ window.ANNIVERSARY_CONTENT = {
   yourName: "Εγώ",
   herName: "Φυλλιώ",
   startDate: "2024-07-07",
-  passphraseHint: "Χαρές χαρές νερό στροφές",
 
   photos: [],
 

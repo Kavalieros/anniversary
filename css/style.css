@@ -35,6 +35,19 @@ body {
 
 /* ── Access gate ── */
 
+#gate[hidden],
+.gate.is-hidden {
+  display: none !important;
+}
+
+#app[hidden] {
+  display: none !important;
+}
+
+#app.is-visible {
+  display: block;
+}
+
 .gate {
   position: fixed;
   inset: 0;

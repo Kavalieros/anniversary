@@ -47,17 +47,36 @@
     return getAcceptedPassphrases().includes(normalized);
   }
 
+  function showApp() {
+    gate.hidden = true;
+    gate.classList.add("is-hidden");
+    app.hidden = false;
+    app.classList.add("is-visible");
+    document.body.classList.add("unlocked");
+    window.scrollTo(0, 0);
+    if (location.hash !== "#home") {
+      history.replaceState({ unlocked: true }, "", "#home");
+    }
+    window.dispatchEvent(new CustomEvent("anniversary:unlocked"));
+  }
+
+  function showGate() {
+    gate.hidden = false;
+    gate.classList.remove("is-hidden");
+    app.hidden = true;
+    app.classList.remove("is-visible");
+    document.body.classList.remove("unlocked");
+    history.replaceState(null, "", location.pathname + location.search);
+  }
+
   function unlock(email) {
     sessionStorage.setItem(STORAGE_KEY, email.trim().toLowerCase());
-    gate.hidden = true;
-    app.hidden = false;
-    window.dispatchEvent(new CustomEvent("anniversary:unlocked"));
+    showApp();
   }
 
   function lock() {
     sessionStorage.removeItem(STORAGE_KEY);
-    gate.hidden = false;
-    app.hidden = true;
+    showGate();
     form.reset();
     errorEl.hidden = true;
   }

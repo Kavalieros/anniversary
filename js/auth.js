@@ -5,7 +5,7 @@
   if (!cfg) {
     document.getElementById("gate-error").hidden = false;
     document.getElementById("gate-error").textContent =
-      "Missing config.js — copy config.example.js to config.js and customize it.";
+      "Λείπει η ρύθμιση — δημιούργησε secrets.js από το secrets.example.js.";
     return;
   }
 
@@ -13,11 +13,28 @@
   const app = document.getElementById("app");
   const form = document.getElementById("gate-form");
   const errorEl = document.getElementById("gate-error");
+  const hintEl = document.getElementById("gate-hint");
   const logoutBtn = document.getElementById("logout-btn");
+
+  if (cfg.passphraseHint) {
+    hintEl.textContent = "Υπόδειξη: " + cfg.passphraseHint;
+  }
+
+  function normalizeGreek(str) {
+    return str
+      .trim()
+      .normalize("NFD")
+      .replace(/\p{M}/gu, "")
+      .toLowerCase();
+  }
 
   function isAllowedEmail(email) {
     const normalized = email.trim().toLowerCase();
     return cfg.allowedEmails.some((e) => e.trim().toLowerCase() === normalized);
+  }
+
+  function isCorrectPassphrase(input) {
+    return normalizeGreek(input) === normalizeGreek(cfg.passphrase);
   }
 
   function unlock(email) {
@@ -52,13 +69,13 @@
     const pass = document.getElementById("gate-pass").value;
 
     if (!isAllowedEmail(email)) {
-      errorEl.textContent = "This email isn't on the guest list.";
+      errorEl.textContent = "Αυτό το email δεν είναι στη λίστα.";
       errorEl.hidden = false;
       return;
     }
 
-    if (pass !== cfg.passphrase) {
-      errorEl.textContent = "Wrong secret — try again.";
+    if (!isCorrectPassphrase(pass)) {
+      errorEl.textContent = "Λάθος μυστικό — δοκίμασε ξανά.";
       errorEl.hidden = false;
       return;
     }

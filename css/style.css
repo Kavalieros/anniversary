@@ -117,6 +117,14 @@ body {
   color: rgba(255, 255, 255, 0.35);
 }
 
+.gate-hint {
+  font-size: 0.8rem;
+  font-style: italic;
+  opacity: 0.55;
+  margin-top: 0.5rem;
+  text-align: center;
+}
+
 .gate-error {
   color: #ffb4b4;
   font-size: 0.85rem;

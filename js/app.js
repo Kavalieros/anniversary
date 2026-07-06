@@ -4,7 +4,7 @@
 
   function formatDate(dateStr) {
     const d = new Date(dateStr + "T00:00:00");
-    return d.toLocaleDateString("en-US", {
+    return d.toLocaleDateString("el-GR", {
       month: "long",
       day: "numeric",
       year: "numeric",
@@ -29,9 +29,9 @@
     const hours = Math.floor(ms / (1000 * 60 * 60));
     const heartbeats = Math.floor(ms / (1000 * 60) * 72);
 
-    document.getElementById("days-together").textContent = days.toLocaleString();
-    document.getElementById("hours-together").textContent = hours.toLocaleString();
-    document.getElementById("heartbeats").textContent = heartbeats.toLocaleString();
+    document.getElementById("days-together").textContent = days.toLocaleString("el-GR");
+    document.getElementById("hours-together").textContent = hours.toLocaleString("el-GR");
+    document.getElementById("heartbeats").textContent = heartbeats.toLocaleString("el-GR");
   }
 
   function renderTimeline() {
@@ -61,7 +61,7 @@
     photos.forEach((filename) => {
       const img = document.createElement("img");
       img.src = `assets/photos/${filename}`;
-      img.alt = "A memory together";
+      img.alt = "Μια αναμνηστική στιγμή μαζί";
       img.loading = "lazy";
       gallery.appendChild(img);
     });

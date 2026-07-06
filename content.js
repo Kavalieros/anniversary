@@ -1,26 +1,24 @@
-// Romantic content — safe to commit. Access is gated by email + passphrase in secrets.
 window.ANNIVERSARY_CONTENT = {
-  yourName: "Your Name",
-  herName: "Her Name",
+  yourName: "Εγώ",
+  herName: "Φυλλίω",
   startDate: "2024-07-06",
+  passphraseHint: "Χαρές χαρές νερό στροφές",
 
-  photos: [
-    // "photo1.jpg",
-  ],
+  photos: [],
 
   timeline: [
-    { date: "Jul 2024", title: "The Beginning", text: "The day everything changed." },
-    { date: "Dec 2024", title: "First Winter", text: "Cozy nights and warm hearts." },
-    { date: "Jul 2025", title: "One Year", text: "A whole year of us — and counting." },
-    { date: "Jul 2026", title: "Two Years", text: "Still falling for you, every single day." },
+    { date: "Ιούλ. 2024", title: "Η Αρχή", text: "Η μέρα που όλα άλλαξαν." },
+    { date: "Δεκ. 2024", title: "Ο Πρώτος Χειμώνας", text: "Ζεστές βραδιές και γεμάτες καρδιές." },
+    { date: "Ιούλ. 2025", title: "Ένας Χρόνος", text: "Ένας ολόκληρος χρόνος εμάς — και συνεχίζουμε." },
+    { date: "Ιούλ. 2026", title: "Δύο Χρόνια", text: "Ακόμα σε ερωτεύομαι, κάθε μέρα." },
   ],
 
-  loveLetter: `My love,
+  loveLetter: `Αγαπημένη μου,
 
-Two years ago, I had no idea how much my life was about to change.
-Every laugh, every quiet moment, every adventure — they've all meant the world to me.
+Πριν από δύο χρόνια δεν είχα ιδέα πόσο θα άλλαζε η ζωή μου.
+Κάθε γέλιο, κάθε ήσυχη στιγμή, κάθε περιπέτεια — όλα σημαίνουν τα πάντα για μένα.
 
-Thank you for being you. Here's to us, and to everything still ahead.
+Σ' ευχαριστώ που είσαι αυτή που είσαι. Στην υγειά μας, και σε ό,τι μας περιμένει.
 
-Forever yours.`,
+Για πάντα δικός σου.`,
 };
